@@ -1,0 +1,9 @@
+<ul class="nav nav-tabs">
+  <li> <%= link_to tag_icon(:list, pat(:list)), url(:videos, :index) %></li>
+  <li class="active"> <%= link_to tag_icon(:plus, pat(:new)), url(:videos, :new) %></li>
+</ul>
+<div class="tabs-content">
+  <% form_for :video, url(:videos, :create), :class => 'form-horizontal', :multipart => true  do |f| %>
+    <%= partial 'videos/form', :locals => { :f => f } %>
+ <% end %>
+</div>
