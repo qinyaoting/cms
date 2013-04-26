@@ -16,7 +16,7 @@
 </fieldset>
 <fieldset class='control-group <%= error ? 'has-error' : ''%>'>
   <div class='controls'>
-    <%= image_tag(@video.cover) if @video.cover? %><br />
+    <%= image_tag(@video.cover) %><br />
     <%= f.file_field :cover %>
   </div>
 </fieldset>

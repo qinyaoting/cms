@@ -54,7 +54,7 @@
           <td class=list-column> <%= video.id %> </td>
           <td class=list-column> <%= video.title %> </td>
           <td class=list-column> <%= video.category %> </td>
-          <td class=list-column> <%= image_tag(video.cover) %></td>
+          <td class=list-column> <%= image_tag("#{video.cover}",:width => 120,:width => 60) %></td>
           <td class=list-column> <%= time_ago_in_words video.created_at %></td>
           <td class=list-column> <%= time_ago_in_words video.updated_at %></td>
           <td class="list-column list-row-action">
@@ -79,7 +79,9 @@
 <hr />
 1 admin login ok<br />
 2 video with account ok<br />
-3 upload image (carrierwave) ok<br />
-4 remove image update image
-5 json
-6 paginate
+3 upload image (carrierwave) ok<hr />
+4 update image<br />
+  --> form_for @video, url(:videos, :update, :id => @video.id), :method => :put,:multipart => true, :class => 'form-horizontal' do |f|
+5 json<br />
+6 paginate<br />
+7 category<br />
