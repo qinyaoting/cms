@@ -1,7 +1,7 @@
 Cms::Admin.controllers :videos do
   get :index do
     @title = "Videos"
-    @videos = Video.all
+    @videos = Video.all(:order => "created_at DESC")
     render 'videos/index'
   end
 
